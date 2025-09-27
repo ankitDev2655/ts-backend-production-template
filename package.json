@@ -5,14 +5,20 @@
   "license": "ISC",
   "author": "ankitDev2655",
   "type": "commonjs",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "dist": "tsc",
     "test": "node test.js",
-    "start": "node index.js",
+    "start": "node dist/server.js",
+    "dev": "nodemon src/server.ts",
     "prepare": "husky"
   },
   "devDependencies": {
+    "@types/node": "^24.5.2",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.1"
+    "lint-staged": "^16.2.1",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   }
 }
