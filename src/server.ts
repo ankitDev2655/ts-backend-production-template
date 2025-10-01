@@ -1,7 +1,4 @@
-let flag = true;
-if(flag){
-flag = false;
+let flag = true
+if (flag) {
+    flag = false
 }
-
-
-
