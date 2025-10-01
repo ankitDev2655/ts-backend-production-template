@@ -5,22 +5,32 @@
   "license": "ISC",
   "author": "ankitDev2655",
   "type": "commonjs",
-  "main": "server.js",
+  "main": "src/server.ts",
   "scripts": {
     "dist": "tsc",
     "test": "node test.js",
     "start": "node dist/server.js",
     "dev": "nodemon src/server.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "npm run lint:fix"
+    ]
   },
   "devDependencies": {
     "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
+    "@eslint/js": "^9.36.0",
     "@types/node": "^24.5.2",
+    "eslint": "^9.36.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.1",
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.45.0"
   }
 }
