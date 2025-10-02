@@ -14,15 +14,15 @@ export default tseslint.config({
     files: ['**/*.ts'],
     extends: [eslint.configs.recommended, ...tseslint.configs.recommendedTypeChecked, eslintConfigPrettier],
     rules: {
-        'no-console': 'off',
+        'no-console': 'error',
         quotes: ['error', 'single', { allowTemplateLiterals: true }],
         '@typescript-eslint/no-unused-vars': [
             'error',
             {
-                argsIgnorePattern: '^_',   // Ignore unused function args starting with "_"
-                varsIgnorePattern: '^_',   // Ignore unused variables starting with "_"
-                caughtErrorsIgnorePattern: '^_', // Ignore unused caught errors starting with "_"
-            },
-        ],
-    },
+                argsIgnorePattern: '^_', // Ignore unused function args starting with "_"
+                varsIgnorePattern: '^_', // Ignore unused variables starting with "_"
+                caughtErrorsIgnorePattern: '^_' // Ignore unused caught errors starting with "_"
+            }
+        ]
+    }
 })

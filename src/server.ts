@@ -1,5 +1,6 @@
 import app from './app'
 import config from './config/config'
+import logger from './utils/logger'
 
 const server = app.listen(config.PORT)
 
@@ -7,7 +8,7 @@ const server = app.listen(config.PORT)
     try {
         // Database connection
 
-        console.info(`APPLICATION_STARTED`, {
+        logger.info(`APPLICATION_STARTED`, {
             meta: {
                 PORT: config.PORT,
                 ENV: process.env.NODE_ENV,
@@ -15,11 +16,11 @@ const server = app.listen(config.PORT)
             }
         })
     } catch (err) {
-        console.error('APPLICATION_FAILED', { meta: err })
+        logger.error('APPLICATION_FAILED', { meta: err })
 
         server.close(() => {
             if (err) {
-                console.error('APPLICATION_CLOSED', { meta: err })
+                logger.error('APPLICATION_CLOSED', { meta: err })
             }
             process.exit(1)
         })

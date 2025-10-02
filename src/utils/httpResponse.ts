@@ -2,6 +2,7 @@ import { Request, Response } from 'express'
 import { THttpResponse } from '../types/types'
 import config from '../config/config'
 import { EApllicationEnvironement } from '../constant/application'
+import logger from './logger'
 
 export default (req: Request, res: Response, responseStatusCode: number, responseMessage: string, responseData: object | null): void => {
     const httpResponse: THttpResponse = {
@@ -17,7 +18,7 @@ export default (req: Request, res: Response, responseStatusCode: number, respons
     }
 
     // Log
-    console.info(`CONTROLLER_RESPONSE`, {
+    logger.info(`CONTROLLER_RESPONSE`, {
         meta: httpResponse
     })
 
